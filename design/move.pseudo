@@ -7,19 +7,85 @@
 # Write pseudocode, not Python code. Use clear indentation and course-appropriate
 # keywords such as INPUT, OUTPUT, IF, ELSE, WHILE, SET, or similar terms.
 
-# TODO 1: Identify the information the movement process needs.
-# Consider the player's current room and movement command.
+START
 
-# TODO 2: Prompt for and receive the player's movement command.
+Set currentRoom = "Submarine Dock"
 
-# TODO 3: Validate whether the requested movement is possible from the
-# current room. Show the decision clearly.
+Display the current room.
+Display the available directions.
+Display the player's inventory.
 
-# TODO 4: Describe what happens when the movement command is valid.
-# Include the room update and player output.
+WHILE the game is running:
 
-# TODO 5: Describe what happens when the movement command is invalid.
-# Include the output the player should receive.
+    Ask the player:
+        "Which direction would you like to move?"
+        "Enter north, south, east, or west."
 
-# TODO 6: Show how movement fits into repeated gameplay.
-# The final game continues accepting commands until a required ending occurs.
+    Get the player's input.
+
+    Convert the input to lowercase.
+
+    IF input = "north":
+
+        IF north is available from the current room:
+            Move the player north.
+            Update currentRoom.
+            Display the new room.
+
+        ELSE:
+            Display "You cannot go north from here."
+
+    ELSE IF input = "south":
+
+        IF south is available from the current room:
+            Move the player south.
+            Update currentRoom.
+            Display the new room.
+
+        ELSE:
+            Display "You cannot go south from here."
+
+    ELSE IF input = "east":
+
+        IF east is available from the current room:
+            Move the player east.
+            Update currentRoom.
+            Display the new room.
+
+        ELSE:
+            Display "You cannot go east from here."
+
+    ELSE IF input = "west":
+
+        IF west is available from the current room:
+            Move the player west.
+            Update currentRoom.
+            Display the new room.
+
+        ELSE:
+            Display "You cannot go west from here."
+
+    ELSE:
+
+        Display "Invalid direction."
+        Display "Please enter north, south, east, or west."
+
+    IF currentRoom = "Deep Sea Trench":
+
+        IF all six items are in the player's inventory:
+
+            Display "You collected everything needed to escape!"
+            Display "The Kraken cannot stop you!"
+            Display "YOU WIN!"
+
+            End the game.
+
+        ELSE:
+
+            Display "The Kraken attacks!"
+            Display "You did not collect all of the items."
+            Display "GAME OVER."
+
+            End the game.
+
+END WHILE
