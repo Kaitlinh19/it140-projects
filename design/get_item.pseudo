@@ -7,26 +7,52 @@
 # Write pseudocode, not Python code. Use clear indentation and course-appropriate
 # keywords such as INPUT, OUTPUT, IF, ELSE, SET, ADD, or similar terms.
 
-START get_item
+IF the player enters "get item":
 
-    # TODO 1: Identify the information the get-item process needs.
-    # Consider the current room, item in that room, and player's inventory.
+    Check the current room.
 
-    # TODO 2: Prompt for and receive the player's get-item command.
+    IF the current room contains an item:
 
-    # TODO 3: Validate whether the requested item is available in the current
-    # room. Show the decision clearly.
+        Display:
+            "There is an item in this room."
 
-    # TODO 4: Describe what happens when the item request is valid.
-    # Include the inventory update and player output.
+        Ask:
+            "What item would you like to get?"
 
-    # TODO 5: Describe what happens when the item request is invalid.
-    # Include the output the player should receive.
+        Get the player's input.
 
-    # TODO 6: Show how the process returns to or continues the larger gameplay
-    # loop after the command is handled.
+        Convert the input to lowercase.
 
-END get_item
+        IF the item entered matches the item in the current room:
+
+            Add the item to the player's inventory.
+
+            Remove the item from the room.
+
+            Display:
+                "You collected the [item]."
+
+            Display the player's inventory.
+
+        ELSE:
+
+            Display:
+                "That item is not in this room."
+            Display:
+                "Please enter the correct item."
+
+    ELSE:
+
+        Display:
+            "There is no item in this room."
+
+    IF the player's inventory contains all six items:
+
+        Display:
+            "You have collected all six items!"
+            "You can now escape the underwater station."
+
+END IF
 
 
 # References
